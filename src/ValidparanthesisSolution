@@ -1,0 +1,33 @@
+
+class ValidparanthesisSolution {
+    public boolean isValid(String s) {
+        Stack<Character> st = new Stack<Character>();
+        
+        for( Character c: s.toCharArray()){
+            
+            if(c =='(')
+                st.push(')');
+            else if(c== '[')
+                st.push(']');
+            else if(c=='{')
+                st.push('}');
+            else{
+                if(st.isEmpty() || st.peek() != c){
+                    return false;
+                }
+                else
+                    st.pop();
+            }
+            
+                
+        }
+        
+        if(st.isEmpty()){
+            return true;
+        }
+        else{
+            return false;
+        }
+        
+    }
+}
