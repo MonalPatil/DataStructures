@@ -1,0 +1,22 @@
+class PalindromeNumberSolution {
+    public boolean isPalindrome(int x) {
+        
+        int original = x;
+        int revertednum = 0;
+        
+        if (x<0)
+            return false; 
+        
+        while (x>0){
+            revertednum = revertednum * 10 + x%10; 
+            x = x/10;
+            
+        }
+        
+        if (original == revertednum){
+            return true;
+        }
+        return false;
+    }
+
+}
