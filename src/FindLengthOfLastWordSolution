@@ -1,0 +1,22 @@
+class FindLengthOfLastWordSolution {
+    public int lengthOfLastWord(String s) {
+        if(s== null){
+            return 0;
+        }
+        s = s.trim();
+        String[] strs = s.split("\\s+");
+        int count=0;
+        
+        if(strs.length==0){
+            return 0;
+        }
+        String word = strs[strs.length-1];
+        
+        for(Character c: word.toCharArray()){
+            count++;
+        }
+        
+        return count;
+        
+    }
+}
