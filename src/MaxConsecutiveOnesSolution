@@ -1,0 +1,19 @@
+class MaxConsecutiveOnesSolution {
+    public int findMaxConsecutiveOnes(int[] nums) {
+        
+        int currsum = nums[0];
+        int globalsum = nums[0];
+        
+        for(int i=1; i<nums.length; i++){
+            if(currsum == currsum +nums[i])
+                currsum = 0; 
+            else
+                currsum = currsum +nums[i];
+            
+            if(currsum> globalsum){
+                globalsum = currsum;
+            }
+        }
+       return globalsum; 
+    }
+}
