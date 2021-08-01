@@ -1,0 +1,43 @@
+class SortSquaresOfNumbersArraySolution {
+    public int[] sortedSquares(int[] nums) {
+        int i;
+        int j=0;
+        int k=0;
+        //int j=0;
+        int[] temp = new int[nums.length];
+        for( i= 0; i<nums.length ;i++){
+            if(nums[i]>=0){
+               
+                break;
+            } 
+            
+        }
+        j = i ;
+        k = i-1;
+        int index =0;
+        while(j<nums.length && k>=0){
+            if(nums[k]*nums[k] > nums[j]*nums[j]){
+                temp[index] = nums[j]*nums[j];
+                j++;
+                index++;
+            }
+            else{
+                temp[index]  = nums[k]*nums[k];
+                k--;
+                index++;
+            }
+        }
+        
+        while(k>=0){
+            temp[index] = nums[k]*nums[k];
+            k--;
+            index++;
+        }
+        while(j<nums.length){
+            temp[index] = nums[j]*nums[j];
+            j++;
+            index++;
+        }
+      return temp;  
+    }
+}
